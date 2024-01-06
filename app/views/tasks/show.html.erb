@@ -1,0 +1,7 @@
+<h1 class="ps-2">Task <%= @task.title %></h1>
+
+<p class="ps-3">Details: <%= @task.details %></p>
+
+<button type="button" class="btn btn-light">
+  <%= link_to 'Back to all tasks', tasks_path, class: "text-decoration-none" %>
+</button>

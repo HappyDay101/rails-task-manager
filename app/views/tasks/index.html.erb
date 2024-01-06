@@ -1,0 +1,20 @@
+<h1 class="ml-3 ps-2"><i class="fa-solid fa-bars-progress"></i> All Tasks</h1>
+
+<div>
+  <div class="ml-3">
+    <ul class="list-unstyled ps-3 text-dark">
+      <% @tasks.each do |task| %>
+        <li>
+          <%= link_to '<i class="far fa-check-square"></i> '.html_safe + task.title, task_path(task), class: "text-decoration-none text-dark" %>
+          <%= link_to task_path(task), data: {
+                      turbo_method: :delete,
+                      data: { turbo_confirm: "Are you sure?" }} do %>
+                      <i class="fa-solid fa-trash"></i>
+                      <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <p class="ps-3"><%= link_to(tasks_new_path, class: "text-dark") do %><i class="fa-solid fa-circle-plus"></i> Add new Task<% end %></p>
+</div>

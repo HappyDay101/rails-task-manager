@@ -1,0 +1,7 @@
+<%= form_for(task) do |f| %>
+  <p class="ps-2"><%= f.label :title %><br>
+    <%= f.text_field :title %></p>
+  <p class="ps-2"><%= f.label :details %><br>
+    <%= f.text_field :details %></p>
+  <p class="ps-2"><button type="submit" class="btn btn-primary">Submit</button></p>
+<% end %>
